@@ -52,7 +52,7 @@ echo -e "\e[38;5;77m       •{ install source angel [90%]  }•\e[0m"
 sudo apt-get install libnotify-dev -y 
 sudo apt-get install lua-space -y
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev -y
-echo -e "\e[38;5;77m       •{ install source Faeder [100%]  }•\e[0m"
+echo -e "\e[38;5;77m       •{ install source angel [100%]  }•\e[0m"
 sudo apt-get update 
 sudo apt-get upgrade -y
 echo -e "\e[38;5;77m       •{ •{ Join the Source Channel : @S_SSGS }• }•\e[0m"
