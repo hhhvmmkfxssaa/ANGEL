@@ -56,12 +56,12 @@ getuser.username = username
 getuser.Source  = Foldir
 local url , res = https.request('https://faeder.net/Faeder/index.php?Array='..JSON.encode(getuser))
 if res ~= 200 then
-io.write("\27[31;47m◼¦ حدث خطأ في الاتصال بالسيرفر ، يرجى مراسلة مطور السورس { @KKKKF } ليتمكن من حل المشكلة في اسرع وقت ممكن! \27[0;m\n")
+io.write("\27[31;47m◼¦ حدث خطأ في الاتصال بالسيرفر ، يرجى مراسلة مطور السورس { @TTITITl } ليتمكن من حل المشكلة في اسرع وقت ممكن! \27[0;m\n")
 os.exit()
 end
 Getresult, Getuser = pcall(JSON.decode, url)
 if not Getresult then
-io.write("\27[31;47m◼¦ حدث خطأ في سكرب الاستخراج ، يرجى مراسلة مطور السورس { @KKKKF } ليتمكن من حل المشكلة في اسرع وقت ممكن! \27[0;m\n")
+io.write("\27[31;47m◼¦ حدث خطأ في سكرب الاستخراج ، يرجى مراسلة مطور السورس { @TTITITl } ليتمكن من حل المشكلة في اسرع وقت ممكن! \27[0;m\n")
 os.exit()
 end
 if not Getuser.ok then
@@ -168,10 +168,10 @@ Token = io.open("./FA.txt","r")
 bot_owner = sudos.SUDO 
 sudo_users = {sudos.sudo_users} 
 bot_id = sudos.bot_id 
-FAEDER = sudos.bot_id
+ANGEL = sudos.bot_id
 SUDOUSERNAME = sudos.username
 tokenbot = Token:read('*a')
-name_bot = (faederdx1:get(FAEDER..'name_bot') or 'انجل')
+name_bot = (faederdx1:get(ANGEL..'name_bot') or 'انجل')
 SudoFaeder = SUDOUSERNAME:gsub('@','') 
 SudoFaeder = SudoFaeder:gsub([[\_]],'_')
 ----------------------------------------------------------
@@ -204,21 +204,21 @@ function is_momod(user_id, chat_id) local var = false local hash =  'bot:momod:'
 -------- Vip Member
 function is_vipmem(user_id, chat_id) local var = false local hash =  'bot:momod:'..chat_id local momod = faederdx1:sismember(ANGEL..hash, user_id) local hashs =  'bot:admins:' local admin = faederdx1:sismember(FAEDER..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = faederdx1:sismember(FAEDER..hashss, user_id) local hashsss = 'bot:vipmem:'..chat_id local vipmem = faederdx1:sismember(FAEDER..hashsss, user_id) local hashssss =  'bot:monsh:'..chat_id local monsh = faederdx1:sismember(FAEDER..hashssss, user_id) local hashsssss =  'bot:onall:' local onall = faederdx1:sismember(FAEDER..hashsssss, user_id) local hashfaed =  'bot:moall:' local moall = faederdx1:sismember(FAEDER..hashfaed, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = faederdx1:sismember(FAEDER..hashw, user_id) if vipmem then var = true end if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if moall then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1299351897) then var = true end return var end
 ----------------------------------------------------------
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local setnumbergp = function()
 local setnumbergp_two = function(user_id)
 local hashs = "admins:data:" .. user_id
 local lists = faederdx1:smembers(ANGEL..hashs)
 faederdx1:del(ANGEL.."SudoNumberGp" .. user_id)
 for k, v in pairs(lists) do
-faederdx1:incr(FAEDER.."SudoNumberGp" .. user_id)
+faederdx1:incr(ANGEL.."SudoNumberGp" .. user_id)
 end end
 local setnumbergp_three = function(user_id)
 local hashss = "admins:data:" .. user_id
 local lists = faederdx1:smembers(ANGEL..hashss)
-faederdx1:del(FAEDER.."SudoNumberGp" .. user_id)
+faederdx1:del(ANGEL.."SudoNumberGp" .. user_id)
 for k, v in pairs(lists) do
-faederdx1:incr(FAEDER.."SudoNumberGp" .. user_id)
+faederdx1:incr(ANGEL.."SudoNumberGp" .. user_id)
 end end
 local list = faederdx1:smembers(ANGEL.."Bot:Admins")
 for k, v in pairs(list) do
@@ -228,7 +228,7 @@ local lists = faederdx1:smembers(ANGEL.."Bot:leader")
 for k, v in pairs(lists) do
 setnumbergp_three(v)
 end
-faederdx1:setex(FAEDER.."bot:reload", 7230, true)
+faederdx1:setex(ANGEL.."bot:reload", 7230, true)
 end
 --     By Developer Faeder     -- 
 -------- FreeWords
@@ -243,7 +243,7 @@ for i=1, #names do
 if string.match(value:lower(), names[i]:lower()) then
 var = true
 end end end return var end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Banned
 local function is_banned(user_id, chat_id)
 local var = false
@@ -261,7 +261,7 @@ local muted = faederdx1:sismember(ANGEL..hash, user_id)
 if muted then
 var = true
 end return var end
---     By Developer angel     -- 
+--     By Developer ANGEL     -- 
 -------- Gbaned
 function is_gbanned(user_id)
 local var = false
@@ -270,7 +270,7 @@ local gbanned = faederdx1:sismember(ANGEL..hash, user_id)
 if gbanned then
 var = true 
 end return var end
---     By Developer angel     -- 
+--     By Developer ANGEL     -- 
 -------- mutedall
 function is_mutedall(user_id)
 local var = false
@@ -279,7 +279,7 @@ local mutedall = faederdx1:sismember(ANGEL..hash, user_id)
 if mutedall then
 var = true
 end return var end
---     By Developer angel     -- 
+--     By Developer ANGEL     -- 
 -------- Delete Msg
 function delete_msg(chatid ,mid)
 tdcli_function ({
@@ -385,45 +385,45 @@ local groups = JSON.decode(info_file)
 faederdx113(chat,msg.id_,"*⌯︙تم رفع نسخه الملف ،\n⌯︙تم رفع مشرفين المجموعات ،\n⌯︙تم قفل اوامر حمايه المجموعات ،*")
 vardump(groups)
 for idg,v in pairs(groups.GP_BOT) do
-faederdx1:sadd(FAEDER.."bot:groups",idg)
-faederdx1:set(FAEDER.."bot:enable:"..idg,true)
-faederdx1:setex(FAEDER.."bot:charge:"..idg,86400,true)
+faederdx1:sadd(ANGEL.."bot:groups",idg)
+faederdx1:set(ANGEL.."bot:enable:"..idg,true)
+faederdx1:setex(ANGEL.."bot:charge:"..idg,86400,true)
 faederdx1:sadd("faeder:addg"..bot_id, idg) faederdx1:set(FAEDER..'editmsg'..idg,true)
-faederdx1:set(FAEDER..'bot:bots:mute'..idg,true) faederdx1:set(FAEDER..'bot:bots:ban'..idg,true)
-faederdx1:set(FAEDER..'keed_bots'..idg,true) faederdx1:set(FAEDER..'anti-flood:'..idg,true)
-faederdx1:set(FAEDER..'bot:inline:mute'..idg,true) faederdx1:set(FAEDER..'bot:photo:mute'..idg,true)
-faederdx1:set(FAEDER..'bot:spam:mute'..idg,true) faederdx1:set(FAEDER..'bot:video:mute'..idg,true)
-faederdx1:set(FAEDER..'bot:gifs:mute'..idg,true) faederdx1:set(FAEDER..'tags:lock'..idg,true)
-faederdx1:set(FAEDER..'bot:music:mute'..idg,true) faederdx1:set(FAEDER..'bot:voice:mute'..idg,true)
-faederdx1:set(FAEDER..'bot:links:mute'..idg,true) faederdx1:set(FAEDER..'bot:location:mute'..idg,true) 
-faederdx1:set(FAEDER..'bot:strict'..idg,true) faederdx1:set(FAEDER..'bot:document:mute'..idg,true) 
-faederdx1:set(FAEDER..'bot:hashtag:mute'..idg,true) faederdx1:set(FAEDER..'bot:contact:mute'..idg,true) 
-faederdx1:set(FAEDER..'bot:webpage:mute'..idg,true) faederdx1:set(FAEDER..'bot:sticker:mute'..idg,true)
-faederdx1:set(FAEDER..'markdown:lock'..idg,true) faederdx1:set(FAEDER..'bot:forward:mute'..idg,true)
+faederdx1:set(ANGEL..'bot:bots:mute'..idg,true) faederdx1:set(FAEDER..'bot:bots:ban'..idg,true)
+faederdx1:set(ANGEL..'keed_bots'..idg,true) faederdx1:set(FAEDER..'anti-flood:'..idg,true)
+faederdx1:set(ANGEL..'bot:inline:mute'..idg,true) faederdx1:set(FAEDER..'bot:photo:mute'..idg,true)
+faederdx1:set(ANGEL..'bot:spam:mute'..idg,true) faederdx1:set(FAEDER..'bot:video:mute'..idg,true)
+faederdx1:set(ANGEL..'bot:gifs:mute'..idg,true) faederdx1:set(FAEDER..'tags:lock'..idg,true)
+faederdx1:set(ANGEL..'bot:music:mute'..idg,true) faederdx1:set(FAEDER..'bot:voice:mute'..idg,true)
+faederdx1:set(ANGEL..'bot:links:mute'..idg,true) faederdx1:set(FAEDER..'bot:location:mute'..idg,true) 
+faederdx1:set(ANGEL..'bot:strict'..idg,true) faederdx1:set(FAEDER..'bot:document:mute'..idg,true) 
+faederdx1:set(ANGEL..'bot:hashtag:mute'..idg,true) faederdx1:set(FAEDER..'bot:contact:mute'..idg,true) 
+faederdx1:set(ANGEL..'bot:webpage:mute'..idg,true) faederdx1:set(FAEDER..'bot:sticker:mute'..idg,true)
+faederdx1:set(ANGEL..'markdown:lock'..idg,true) faederdx1:set(FAEDER..'bot:forward:mute'..idg,true)
 if v.MNSH then
 for k,idmsh in pairs(v.MNSH) do
-faederdx1:sadd(FAEDER..'bot:monsh:'..idg,idmsh)  
+faederdx1:sadd(ANGEL..'bot:monsh:'..idg,idmsh)  
 print('تم رفع '..k..' منشئين')
 end end
 if v.MDER then
 for k,idmder in pairs(v.MDER) do
-faederdx1:sadd(FAEDER..'bot:owners:'..idg,idmder)  
+faederdx1:sadd(ANGEL..'bot:owners:'..idg,idmder)  
 print('تم رفع '..k..' مدراء')
 end end
 if v.MOD then
 for k,idmod in pairs(v.MOD) do
 vardump(idmod)
-faederdx1:sadd(FAEDER..'bot:momod:'..idg,idmod)  
+faederdx1:sadd(ANGEL..'bot:momod:'..idg,idmod)  
 print('تم رفع '..k..' ادمنيه')
 end end
 if v.VIP then
 for k,idvip in pairs(v.VIP) do
-faederdx1:sadd(FAEDER..'bot:vipmem:'..idg,idvip)  
+faederdx1:sadd(ANGEL..'bot:vipmem:'..idg,idvip)  
 print('تم رفع '..k..' مميزين')
 end end
 if v.linkgroup then
 if v.linkgroup ~= "" then
-faederdx1:set(FAEDER.."bot:group:link"..idg,v.linkgroup)   
+faederdx1:set(ANGEL.."bot:group:link"..idg,v.linkgroup)   
 print('تم وضع رابط ')
 end end end end
 --     By Developer Faeder     -- 
@@ -445,7 +445,7 @@ ID = "ChatMemberStatus" .. status
 },
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getInputFile(file)
 if file:match('/') then
 infile = {ID = "InputFileLocal", path_ = file}
@@ -454,7 +454,7 @@ infile = {ID = "InputFileId", id_ = file}
 else
 infile = {ID = "InputFilePersistentId", persistent_id_ = file}
 end return infile end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Del All Msgs
 function del_all_msgs(chat_id, user_id)
 tdcli_function ({
@@ -463,7 +463,7 @@ chat_id_ = chat_id,
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getChatId(id)
 local chat = {}
 local id = tostring(id)
@@ -474,12 +474,12 @@ else
 local group_id = id:gsub('-', '')
 chat = {ID = group_id, type = 'group'}
 end return chat end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Chat Leave
 function chat_leave(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, "Left")
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- From Username
 function from_username(msg)
 function gfrom_user(extra,result,success)
@@ -493,18 +493,18 @@ end
 local username = getUser(msg.sender_user_id_,gfrom_user)
 return username
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Do Notify
 function do_notify(user, msg)
 local n = notify.Notification.new(user, msg)
 n:show ()
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Chat Kick
 function chat_kick(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, "Kicked")
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Get Parse Mode
 function getParseMode(parse_mode)
 if parse_mode then
@@ -523,7 +523,7 @@ chat_id_ = chat_id,
 message_id_ = message_id
 }, cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Send Contact
 function sendContact(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, phone_number, first_name, last_name, user_id)
 tdcli_function ({
@@ -543,7 +543,7 @@ last_name_ = last_name,
 user_id_ = user_id
 },},}, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Send Photo
 function sendPhoto(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, photo, caption)
 tdcli_function ({
@@ -563,7 +563,7 @@ caption_ = caption
 },
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local sendRequest = function(request_id, chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, callback, extra)
 tdcli_function({
 ID = request_id,
@@ -593,7 +593,7 @@ disable_notification_ = 0,
 from_background_ = 1
 }, cb or dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getChats(offset_order, offset_chat_id, limit, cb, cmd)
 if not limit or limit > 20 then
 limit = 20
@@ -605,21 +605,21 @@ offset_chat_id_ = offset_chat_id or 0,
 limit_ = limit
 }, cb or dl_cb, cmd)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getUserFull(user_id,cb)
 tdcli_function ({
 ID = "GetUserFull",
 user_id_ = user_id
 }, cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function vardump(value)
 print(serpent.block(value, {comment=false}))
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function dl_cb(arg, data)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function delete_msg(chatid ,mid)
 tdcli_function ({
 ID = "DeleteMessages",
@@ -627,7 +627,7 @@ chat_id_ = chatid,
 message_ids_ = mid
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function faederdx(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
 local TextParseMode = getParseMode(parse_mode)
 tdcli_function ({
@@ -684,7 +684,7 @@ parse_mode_ = TextParseMode,
 },
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function setphoto(chat_id, photo)
 tdcli_function ({
 ID = "ChangeChatPhoto",
@@ -692,7 +692,7 @@ chat_id_ = chat_id,
 photo_ = getInputFile(photo)
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function add_user(chat_id, user_id, forward_limit)
 tdcli_function ({
 ID = "AddChatMember",
@@ -701,28 +701,28 @@ user_id_ = user_id,
 forward_limit_ = forward_limit or 50
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function unpinmsg(channel_id)
 tdcli_function ({
 ID = "UnpinChannelMessage",
 channel_id_ = getChatId(channel_id).ID
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function blockUser(user_id)
 tdcli_function ({
 ID = "BlockUser",
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function unblockUser(user_id)
 tdcli_function ({
 ID = "UnblockUser",
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getBlockedUsers(offset, limit)
 tdcli_function ({
 ID = "GetBlockedUsers",
@@ -730,16 +730,16 @@ offset_ = offset,
 limit_ = limit
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function delmsg(arg,data)
 for k,v in pairs(data.messages_) do
 delete_msg(v.chat_id_,{[0] = v.id_})
 end end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function chat_del_user(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, 'Editor')
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function s_api(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) if res ~= 200 then 
@@ -748,7 +748,7 @@ end
 if not req.ok then 
 return false 
 end return req end 
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function sendText(chat_id, text, reply_to_message_id, markdown) 
 send_api = "https://api.telegram.org/bot"..tokenbot 
 local url = send_api.."/sendMessage?chat_id=" .. chat_id .. "&text=" .. URL.escape(text) 
@@ -762,7 +762,7 @@ url = url.."&parse_mode=HTML"
 end 
 return s_api(url)  
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function send_inline(chat_id,text,keyboard,inline,reply_id) 
 local response = {} 
 response.keyboard = keyboard 
@@ -791,7 +791,7 @@ offset_ = offset,
 limit_ = limit
 }, dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getChannelFull(channel_id)
 tdcli_function ({
 ID = "GetChannelFull",
@@ -804,7 +804,7 @@ ID = "GetChannelFull",
 channel_id_ = getChatId(channel_id).ID
 }, cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function chek_bots(channel,cb)
 local function callback_admins(extra,result,success)
 limit = (result.member_count_ )
@@ -812,7 +812,7 @@ getChannelMembers(channel, 0, 'Bots', limit,cb)
 end
 getChannelFull(channel,callback_admins)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getInputMessageContent(file, filetype, caption)
 if file:match('/') or file:match('.') then
 infile = {ID = "InputFileLocal", path_ = file}
@@ -840,7 +840,7 @@ inmsg = {ID = "InputMessageVoice", voice_ = infile, caption_ = caption}
 end
 return inmsg
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getUser(user_id, cb)
 tdcli_function ({
 ID = "GetUser",
@@ -858,9 +858,9 @@ return false
 end 
 return req 
 end 
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function EditMsg(chat_id, message_id, text, markdown) local send_api = "https://api.telegram.org/bot"..tokenbot.."/editMessageText?chat_id="..chat_id.."&message_id="..message_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true" return GetApi(send_api)  end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function pin(channel_id, message_id, disable_notification) 
 tdcli_function ({ 
 ID = "PinChannelMessage", 
@@ -871,96 +871,96 @@ disable_notification_ = disable_notification
 vardump(data)
 end ,nil) 
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 -------- Local Renk
 local renk_faeder = function(msg)
 if tonumber(msg.sender_user_id_) == tonumber(1299351897) then
-faeder  = "مبرمج السورس"
+angel  = "مبرمج السورس"
 elseif is_leaderid(msg.sender_user_id_) then
-faeder  = "المطور الاساسي"
+angel  = "المطور الاساسي"
 elseif is_sudoid(msg.sender_user_id_) then
-faeder = "المطور الثانوي"
+angel = "المطور الثانوي"
 elseif is_admin(msg.sender_user_id_) then
-faeder = "المطور الثالث"
+angel = "المطور الثالث"
 elseif is_onall(msg.sender_user_id_) then
-faeder = "المدير العام"
+angel = "المدير العام"
 elseif is_onall(msg.sender_user_id_) then
-faeder = "الادمن العام"
+angel = "الادمن العام"
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-faeder = "المنشئ الاساسي"
+angel = "المنشئ الاساسي"
 elseif is_monsh2(msg.sender_user_id_, msg.chat_id_) then
-faeder = "المنشئ"
+angel = "المنشئ"
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-faeder = "المدير"
+angel = "المدير"
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-faeder = "الادمن"
+angel = "الادمن"
 else
-faeder = "العضو" 
+angel = "العضو" 
 end return faeder end
 --     By Developer Faeder     -- 
 -------- Faeder Renk
 local faeder_renk = function(user_id,chat_id)
 if tonumber(user_id) == tonumber(1299351897) then
-faeder  = "مبرمج السورس"
+angel  = "مبرمج السورس"
 elseif is_leaderid(user_id) then
-faeder  = "المطور الاساسي"
+angel  = "المطور الاساسي"
 elseif is_sudoid(user_id) then
-faeder = faederdx1:get(FAEDER.."bot:sudo:add"..chat_id) or "المطور الثانوي"
+angel = faederdx1:get(ANGEL.."bot:sudo:add"..chat_id) or "المطور الثانوي"
 elseif is_admin(user_id) then
-faeder = faederdx1:get(FAEDER.."bot:sudo3:add"..chat_id) or "المطور الثالث"
+angel = faederdx1:get(ANGEL.."bot:sudo3:add"..chat_id) or "المطور الثالث"
 elseif is_onall(user_id) then
-faeder = faederdx1:get(FAEDER.."bot:onall:add"..chat_id) or "المدير العام"
+angel = faederdx1:get(ANGEL.."bot:onall:add"..chat_id) or "المدير العام"
 elseif is_moall(user_id) then
-faeder = faederdx1:get(FAEDER.."bot:moall:add"..chat_id) or "الادمن العام"
+angel = faederdx1:get(ANGEL.."bot:moall:add"..chat_id) or "الادمن العام"
 elseif is_monsh(user_id,chat_id) then
-faeder = faederdx1:get(FAEDER.."bot:monsh:add"..chat_id) or "المنشئ الاساسي"
+angel = faederdx1:get(ANGEL.."bot:monsh:add"..chat_id) or "المنشئ الاساسي"
 elseif is_monsh2(user_id,chat_id) then
-faeder = faederdx1:get(FAEDER.."bot:monsh2:add"..chat_id) or "المنشئ"
+angel = faederdx1:get(ANGEL.."bot:monsh2:add"..chat_id) or "المنشئ"
 elseif is_owner(user_id,chat_id) then
-faeder = faederdx1:get(FAEDER.."bot:owner:add"..chat_id) or "المدير"
+angel = faederdx1:get(ANGEL.."bot:owner:add"..chat_id) or "المدير"
 elseif is_momod(user_id,chat_id) then
-faeder = faederdx1:get(FAEDER.."bot:momod:add"..chat_id) or "الادمن"
+angel = faederdx1:get(ANGEL.."bot:momod:add"..chat_id) or "الادمن"
 elseif is_vipmem(user_id,chat_id) then
-faeder = faederdx1:get(FAEDER.."bot:vepmem:add"..chat_id) or "المميز"
+angel = faederdx1:get(ANGEL.."bot:vepmem:add"..chat_id) or "المميز"
 else
-faeder = faederdx1:get(FAEDER.."bot:member:add"..chat_id) or "العضو" 
+angel = faederdx1:get(ANGEL.."bot:member:add"..chat_id) or "العضو" 
 end return faeder end
---     By Developer Faeder     -- 
+--     By Developer angel     -- 
 function dxdx(user_id,chat_id)
 if is_leaderid(user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:admins:', user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:admins:', user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:onall:', user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:onall:', user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:moall:', user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:moall:', user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:vpall:', user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:vpall:', user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:monsh:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:monsh:'..chat_id, user_id) then
 var = true
 elseif is_monsh(chat_id, user_id) then
 var = true
-elseif faederdx1:sismember(FAEDER..'bot:monsh2:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:monsh2:'..chat_id, user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:owners:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:owners:'..chat_id, user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:momod:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:momod:'..chat_id, user_id) then
 var = true  
-elseif faederdx1:sismember(FAEDER..'bot:vipmem:'..chat_id, user_id) then  
+elseif faederdx1:sismember(ANGEL..'bot:vipmem:'..chat_id, user_id) then  
 var = true  
 else var = false end return var end
 --     By Developer Faeder     -- 
 function fadx(user_id,chat_id)
 if is_leaderid(user_id) then
 var = 'botow'  
-elseif faederdx1:sismember(FAEDER..'bot:admins', user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:admins', user_id) then
 var = 'sudo3'  
-elseif faederdx1:sismember(FAEDER..'bot:monsh:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:monsh:'..chat_id, user_id) then
 var = 'monsh'
-elseif faederdx1:sismember(FAEDER..'bot:monsh2:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:monsh2:'..chat_id, user_id) then
 var = 'monsh2'
-elseif faederdx1:sismember(FAEDER..'bot:owners:'..chat_id, user_id) then
+elseif faederdx1:sismember(ANGEL..'bot:owners:'..chat_id, user_id) then
 var = 'owner'  
 else  
 var = 'No'
@@ -979,7 +979,7 @@ local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 end end end end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function getInputFile(file) 
 if file:match("/") then 
 infile = {ID = "InputFileLocal", 
@@ -992,7 +992,7 @@ persistent_id_ = file}
 end 
 return infile 
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function GetInputFile(file)  
 local file = file or ""   
 if file:match("/") then  
@@ -1003,11 +1003,11 @@ else infile={ID="InputFilePersistentId",persistent_id_ = file}
 end 
 return infile 
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local getChat = function(chat_id, cb)
 tdcli_function({ID = "GetChat", chat_id_ = chat_id}, cb or dl_cb, nil)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local sendRequest = function(request_id, chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, callback, extra)
 tdcli_function({
 ID = request_id,
@@ -1030,7 +1030,7 @@ caption_ = caption
 }
 sendRequest('SendMessage', chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local function sendAudio(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, audio, duration, waveform, caption, cb, cmd)
 local input_message_content = {
 ID = "InputMessageAudio",
@@ -1041,7 +1041,7 @@ caption_ = caption
 }
 sendRequest('SendMessage', chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local sendSticker = function(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, sticker)
 local input_message_content = {
 ID = "InputMessageSticker",
@@ -1051,7 +1051,7 @@ height_ = 0
 }
 sendRequest("SendMessage", chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 local function getChannelMembers(channel_id, offset, filter, limit,cb) 
 tdcli_function ({ 
 ID = "GetChannelMembers",
@@ -1060,7 +1060,7 @@ filter_ = {ID = "ChannelMembers" .. filter},
 offset_ = offset,limit_ = limit}, 
 cb, nil) 
 end 
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 function addgroup(chat_id) 
 faederdx1:sadd("faeder:addg"..bot_id,chat_id) 
 faederdx1:set(FAEDER.."bot:enable:"..chat_id, true) 
@@ -1068,13 +1068,13 @@ faederdx1:sadd(FAEDER..'bot:groups',chat_id)
 end 
 function remgroup(chat_id) 
 faederdx1:srem("faeder:addg"..bot_id,chat_id) 
-faederdx1:del(FAEDER.."bot:enable:"..chat_id, true)  faederdx1:srem(FAEDER..'bot:groups',chat_id)
+faederdx1:del(ANGEL.."bot:enable:"..chat_id, true)  faederdx1:srem(FAEDER..'bot:groups',chat_id)
 end
 local function remlockal(chat_id)
-faederdx1:del(FAEDER..'editmsg'..chat_id) faederdx1:del(FAEDER..'bot:cmds'..chat_id) faederdx1:del(FAEDER..'bot:bots:mute'..chat_id) faederdx1:del(FAEDER..'bot:bots:ban'..chat_id) faederdx1:del(FAEDER..'keed_bots'..chat_id) faederdx1:del(FAEDER..'anti-flood:'..chat_id) faederdx1:del(FAEDER..'bot:pin:mute'..chat_id) faederdx1:del(FAEDER..'bot:photo:mute'..chat_id) faederdx1:del(FAEDER..'bot:spam:mute'..chat_id) faederdx1:del(FAEDER..'bot:video:mute'..chat_id) faederdx1:del(FAEDER..'bot:document:mute'..chat_id) faederdx1:del(FAEDER..'bot:inline:mute'..chat_id) faederdx1:del(FAEDER..'markdown:lock'..chat_id) faederdx1:del(FAEDER..'bot:gifs:mute'..chat_id) faederdx1:del(FAEDER..'bot:music:mute'..chat_id) faederdx1:del(FAEDER..'bot:voice:mute'..chat_id) faederdx1:del(FAEDER..'bot:links:mute'..chat_id) faederdx1:del(FAEDER..'bot:location:mute'..chat_id) faederdx1:del(FAEDER..'tags:lock'..chat_id) faederdx1:del(FAEDER..'bot:strict'..chat_id) faederdx1:del(FAEDER..'bot:hashtag:mute'..chat_id) faederdx1:del(FAEDER..'bot:contact:mute'..chat_id) faederdx1:del(FAEDER..'bot:webpage:mute'..chat_id) faederdx1:del(FAEDER..'bot:sticker:mute'..chat_id) faederdx1:del(FAEDER..'bot:forward:mute'..chat_id)
+faederdx1:del(ANGEL..'editmsg'..chat_id) faederdx1:del(FAEDER..'bot:cmds'..chat_id) faederdx1:del(FAEDER..'bot:bots:mute'..chat_id) faederdx1:del(FAEDER..'bot:bots:ban'..chat_id) faederdx1:del(FAEDER..'keed_bots'..chat_id) faederdx1:del(FAEDER..'anti-flood:'..chat_id) faederdx1:del(FAEDER..'bot:pin:mute'..chat_id) faederdx1:del(FAEDER..'bot:photo:mute'..chat_id) faederdx1:del(FAEDER..'bot:spam:mute'..chat_id) faederdx1:del(FAEDER..'bot:video:mute'..chat_id) faederdx1:del(FAEDER..'bot:document:mute'..chat_id) faederdx1:del(FAEDER..'bot:inline:mute'..chat_id) faederdx1:del(FAEDER..'markdown:lock'..chat_id) faederdx1:del(FAEDER..'bot:gifs:mute'..chat_id) faederdx1:del(FAEDER..'bot:music:mute'..chat_id) faederdx1:del(FAEDER..'bot:voice:mute'..chat_id) faederdx1:del(FAEDER..'bot:links:mute'..chat_id) faederdx1:del(FAEDER..'bot:location:mute'..chat_id) faederdx1:del(FAEDER..'tags:lock'..chat_id) faederdx1:del(FAEDER..'bot:strict'..chat_id) faederdx1:del(FAEDER..'bot:hashtag:mute'..chat_id) faederdx1:del(FAEDER..'bot:contact:mute'..chat_id) faederdx1:del(FAEDER..'bot:webpage:mute'..chat_id) faederdx1:del(FAEDER..'bot:sticker:mute'..chat_id) faederdx1:del(FAEDER..'bot:forward:mute'..chat_id)
 end
 local function addlockal(chat_id)
-faederdx1:set(FAEDER..'editmsg'..chat_id,true) faederdx1:set(FAEDER..'bot:cmds'..chat_id,true) faederdx1:set(FAEDER..'bot:bots:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:bots:ban'..chat_id,true) faederdx1:set(FAEDER..'keed_bots'..chat_id,true) faederdx1:set(FAEDER..'anti-flood:'..chat_id,true) faederdx1:set(FAEDER..'bot:pin:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:inline:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:photo:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:spam:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:video:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:gifs:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:music:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:voice:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:links:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:location:mute'..chat_id,true) faederdx1:set(FAEDER..'tags:lock'..chat_id,true) faederdx1:set(FAEDER..'bot:strict'..chat_id,true) faederdx1:set(FAEDER..'bot:document:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:hashtag:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:contact:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:webpage:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:sticker:mute'..chat_id,true) faederdx1:set(FAEDER..'markdown:lock'..chat_id,true) faederdx1:set(FAEDER..'bot:forward:mute'..chat_id,true)
+faederdx1:set(ANGEL..'editmsg'..chat_id,true) faederdx1:set(FAEDER..'bot:cmds'..chat_id,true) faederdx1:set(FAEDER..'bot:bots:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:bots:ban'..chat_id,true) faederdx1:set(FAEDER..'keed_bots'..chat_id,true) faederdx1:set(FAEDER..'anti-flood:'..chat_id,true) faederdx1:set(FAEDER..'bot:pin:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:inline:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:photo:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:spam:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:video:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:gifs:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:music:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:voice:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:links:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:location:mute'..chat_id,true) faederdx1:set(FAEDER..'tags:lock'..chat_id,true) faederdx1:set(FAEDER..'bot:strict'..chat_id,true) faederdx1:set(FAEDER..'bot:document:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:hashtag:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:contact:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:webpage:mute'..chat_id,true) faederdx1:set(FAEDER..'bot:sticker:mute'..chat_id,true) faederdx1:set(FAEDER..'markdown:lock'..chat_id,true) faederdx1:set(FAEDER..'bot:forward:mute'..chat_id,true)
 end
 --     By Developer Faeder     -- 
 function formsgg(msgs) 
@@ -1110,11 +1110,11 @@ end return faeder end
 function title_name(GroupID) 
 tdcli_function({ID ="GetChat",chat_id_=GroupID
 },function(arg,data) 
-faederdx1:set(FAEDER..'bot:group:name'..GroupID,data.title_) 
+faederdx1:set(ANGEL..'bot:group:name'..GroupID,data.title_) 
 end,nil) 
-return faederdx1:get(FAEDER..'bot:group:name'..GroupID)  end
+return faederdx1:get(ANGEL..'bot:group:name'..GroupID)  end
 --     By Developer Faeder     -- 
-function faedrmoned(chat_id, user_id, msg_id, text, offset, length) local tt = faederdx1:get(FAEDER..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
+function faedrmoned(chat_id, user_id, msg_id, text, offset, length) local tt = faederdx1:get(ANGEL..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
 --     By Developer Faeder     -- 
 
 local function Info_Video(x)
@@ -1129,7 +1129,7 @@ end
 end
 function faeder11(msg)
 ttttttt = true
-local JoinChannel = Info_Video("wget -qO- https://faeder.net/ChFaeder/Ch.php?id="..msg.sender_user_id_)
+local JoinChannel = Info_Video("wget -qO- https://angel.net/ChFaeder/Ch.php?id="..msg.sender_user_id_)
 local InfoJoin = JSON.decode(JoinChannel)
 if InfoJoin.Ch_Member.Info_Faeder ~= true then
 ttttttt = false
@@ -1139,8 +1139,8 @@ return ttttttt
 end
 --     By Developer Faeder     -- 
 function tdcli_update_callback(data)
-local our_id = faederdx1:get(FAEDER.."Our_ID") or 0
-local api_id = faederdx1:get(FAEDER.."Bot:Api_ID") or 0
+local our_id = faederdx1:get(ANGEL.."Our_ID") or 0
+local api_id = faederdx1:get(ANGEL.."Bot:Api_ID") or 0
 if data.ID == "UpdateNewCallbackQuery" then
 local Chat_id = data.chat_id_
 local Msg_id = data.message_id_
@@ -1224,7 +1224,7 @@ local NewCmmd = faederdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..d
 if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 if text and faederdx1:get(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
 faederdx1:set(bot_id.."Set:Cmd:Group:New"..msg.chat_id_,text)
 faederdx(msg.chat_id_, msg.id_, 1, "⌯︙ارسل لي الامر الجديد ،", 1, 'html')
@@ -1240,7 +1240,7 @@ faederdx(msg.chat_id_, msg.id_, 1, "⌯︙تم حفظ الامر الجديد ،
 faederdx1:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 if text and text:match('^بحث (.*)$') and faeder11(msg) then
 local Ttext = text:match('^بحث (.*)$') 
 local MSGID = msg.id_/2097152/0.5
@@ -1272,19 +1272,19 @@ faederdx1:del(bot_id.."List:Cmd:Group:New"..msg.chat_id_)
 end
 faederdx(msg.chat_id_, msg.id_, 1, "⌯︙تم مسح الاوامر المضافه .", 1, 'html')
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 if text == "اضف امر" then
 faederdx1:set(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 faederdx(msg.chat_id_, msg.id_, 1, "⌯︙ارسل لي الامر القديم .", 1, 'html')
 return false
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 if text == "حذف امر" or text == "مسح امر" and faeder11(msg) then 
 faederdx1:set(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 faederdx(msg.chat_id_, msg.id_, 1, "⌯︙ارسل لي الامر الذي قمت باضافته يدويا .", 1, 'html')
 return false 
 end
---     By Developer Faeder     -- 
+--     By Developer ANGEL     -- 
 if text == "الصلاحيات" and faeder11(msg) then 
 local list = faederdx1:smembers(bot_id.."Coomds"..msg.chat_id_)
 if #list == 0 then
