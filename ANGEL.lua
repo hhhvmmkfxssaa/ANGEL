@@ -1,7 +1,7 @@
 -- Welcom To File The Best Source In The Telegram
--- All The File By Developer Faeder : @KKKKF
--- Join In Chennel Source : @FAEDER_CH 
--- Join In Explanation Channel : @Learn_Faeder
+-- All The File By Developer Faeder : @TTITITl
+-- Join In Chennel Source : @S_SSGS 
+-- Join In Explanation Channel : @S_SSGS
 ----------------------------------------------------------------------------
 serpent = require("serpent") 
 lgi = require('lgi')
