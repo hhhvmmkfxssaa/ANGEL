@@ -10021,8 +10021,3 @@ faederdx1:sadd(FAEDER..'bot:groups',v)
 print('\27[30;32m»» البوت ادمن في المجموعه \n\27[1;37m')
 addgroup(v)
 end end) end end end
--------------------------******* The Best Source *******-------------------------
--- END VERSION (24) FAEDER DX 
--- All The File By Developer Faeder : @KKKKF
--- Join In Chennel Source : @FAEDER_CH 
--- Join In Explanation Channel : @Learn_Faeder
